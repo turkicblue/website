@@ -1,0 +1,412 @@
+{
+  "Brand": {
+    "suffix": "Foundation"
+  },
+  "Meta": {
+    "title": "Turkic Blue Foundation",
+    "description": "An international, community-run foundation for the culture, history and languages of the Turkic peoples."
+  },
+  "Nav": {
+    "main": "Main",
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "governance": "Governance",
+    "getInvolved": "Get involved",
+    "skip": "Skip to content",
+    "menu": "Menu",
+    "close": "Close"
+  },
+  "Sky": {
+    "label": "Introduction",
+    "title": "Preserving and sharing Turkic heritage",
+    "text": "Turkic Blue Foundation is an international, community-run organisation for the culture, history and languages of the Turkic peoples.",
+    "primary": "Our projects",
+    "secondary": "Get involved",
+    "scroll": "Scroll",
+    "stages": [
+      {
+        "label": "Kök Türük",
+        "title": "The name the Göktürks gave themselves",
+        "text": "Written in Old Turkic runes in the Orkhon inscriptions of the 8th century, among the oldest surviving texts in a Turkic language. It reads right to left."
+      },
+      {
+        "label": "Kök: blue, sky",
+        "title": "Where our name comes from",
+        "text": "In Old Turkic, kök means both blue and the sky. The word is still used across the Turkic languages today."
+      },
+      {
+        "label": "Shangyrak",
+        "title": "The crown of the yurt",
+        "text": "The wooden ring at the top of the yurt that holds its frame together. It appears on the flag of Kyrgyzstan and the emblem of Kazakhstan."
+      }
+    ]
+  },
+  "Home": {
+    "aboutTitle": "About the foundation",
+    "aboutLede": "Turkic Blue Foundation is a non-profit organisation run by an international community of volunteers, researchers and supporters.",
+    "aboutText": "We document and share the culture, history and languages of the Turkic peoples, from the Balkans to Siberia, and we work to make this knowledge free and accurate. We also respond to misinformation and stand up for the reputation and rights of Turkic communities.",
+    "aboutMore": "More about the foundation",
+    "projectsTitle": "Projects by Turkic Blue Foundation",
+    "projectsLede": "Turkipedia is live. Turquoise News, the research network and the DAO are in development.",
+    "projectsMore": "All projects",
+    "governanceTitle": "Governance",
+    "governanceLede": "The foundation will be governed by its members through a DAO on the Ethereum blockchain. Every proposal, vote and payment will be public.",
+    "governanceMore": "How governance will work",
+    "involvedTitle": "Get involved",
+    "involvedLede": "The foundation depends on people who give their time and knowledge.",
+    "involvedMore": "All the ways to take part"
+  },
+  "Work": {
+    "title": "What we do",
+    "items": [
+      {
+        "title": "Preserve",
+        "text": "Record history, languages and traditions, and keep sources accessible."
+      },
+      {
+        "title": "Represent",
+        "text": "Present the Turkic world accurately, in its own languages."
+      },
+      {
+        "title": "Share",
+        "text": "Publish knowledge openly, free to read and reuse."
+      },
+      {
+        "title": "Celebrate",
+        "text": "Promote Turkic art, music, literature and festivals."
+      },
+      {
+        "title": "Protect",
+        "text": "Correct misinformation and support the rights of Turkic communities."
+      }
+    ]
+  },
+  "Facts": {
+    "label": "Key facts",
+    "founded": "Founded",
+    "foundedValue": "[Year]",
+    "registered": "Registered in",
+    "registeredValue": "[Country]",
+    "legalForm": "Legal form",
+    "legalFormValue": "[Non-profit foundation]",
+    "licence": "Content licence",
+    "licenceValue": "CC BY-SA 4.0",
+    "languages": "Working languages",
+    "languagesValue": "Turkish, Azerbaijani, Kazakh, Uzbek, Uyghur, English, French"
+  },
+  "About": {
+    "title": "About the foundation",
+    "lede": "Turkic Blue Foundation is a non-profit organisation run by an international community of volunteers, researchers and supporters.",
+    "intro": [
+      "We document and share the culture, history and languages of the Turkic peoples, from the Balkans to Siberia, and we work to make this knowledge free and accurate.",
+      "We also respond to misinformation and stand up for the reputation and rights of Turkic communities.",
+      "Our work is open. Content is published under free licences, and decisions about funding will be made publicly by the foundation's members."
+    ],
+    "peopleTitle": "People",
+    "peopleText": "The foundation is run by volunteers from several countries. [Board members and advisors to be announced.]",
+    "contactTitle": "Contact",
+    "contactText": "For questions, partnerships and press enquiries, write to [contact email]."
+  },
+  "Name": {
+    "title": "Why “Blue”",
+    "lede": "The Old Turkic word kök means both blue and the sky. The Göktürks, whose khaganate stretched across Central Asia between the 6th and 8th centuries, called themselves Kök Türük.",
+    "text": "The same word is used across the Turkic languages today, in Latin, Cyrillic and Arabic scripts. Our name follows it.",
+    "caption": "The word for blue or sky in Turkic languages",
+    "word": "Word",
+    "language": "Language",
+    "languages": {
+      "otk": "Old Turkic",
+      "tr": "Turkish",
+      "az": "Azerbaijani",
+      "tk": "Turkmen",
+      "uz": "Uzbek",
+      "kk": "Kazakh",
+      "ky": "Kyrgyz",
+      "ug": "Uyghur",
+      "tt": "Tatar",
+      "sah": "Sakha (Yakut)"
+    }
+  },
+  "Projects": {
+    "title": "Projects by Turkic Blue Foundation",
+    "lede": "Turkipedia is live. Turquoise News, the research network and the DAO are in development.",
+    "status": {
+      "live": "Live",
+      "preparation": "In preparation",
+      "forming": "Forming",
+      "planned": "Planned"
+    },
+    "details": "Details",
+    "whatItDoes": "What it does",
+    "takePart": "How to take part",
+    "readMore": "Read more",
+    "otherProjects": "Other projects",
+    "items": {
+      "turkipedia": {
+        "name": "Turkipedia",
+        "summary": "A free encyclopedia of the Turkic world, written and reviewed by volunteers.",
+        "body": [
+          "Turkipedia covers the history, peoples, states, languages, literature, art and traditions of the Turkic world. Each article can exist in seven languages: Turkish, Azerbaijani, Kazakh, Uzbek, Uyghur, English and French.",
+          "Every edit is reviewed before it is published, every revision is kept, and every author is credited. The first articles were imported from Turkish Wikipedia, with attribution, and the community improves them from there."
+        ],
+        "points": [
+          "14,238 articles, with more languages being added",
+          "Review of every edit before publication",
+          "Full revision history and author credits",
+          "Open licence: CC BY-SA 4.0"
+        ],
+        "facts": [
+          {
+            "label": "Status",
+            "value": "Live"
+          },
+          {
+            "label": "Website",
+            "value": "turkipedia.org"
+          },
+          {
+            "label": "Languages",
+            "value": "7"
+          },
+          {
+            "label": "Licence",
+            "value": "CC BY-SA 4.0"
+          }
+        ],
+        "takePart": "Anyone can write, translate or review articles. Create an account on Turkipedia to start.",
+        "action": "Visit turkipedia.org"
+      },
+      "turquoise-news": {
+        "name": "Turquoise News",
+        "summary": "An independent news service about the Turkic world.",
+        "body": [
+          "Turquoise News will report on society, culture, science and current affairs across the Turkic world. It will be written by people who live there and published in Turkic languages, English and French.",
+          "It will also publish corrections, with sources, when coverage elsewhere gets facts about Turkic peoples wrong."
+        ],
+        "points": [
+          "Reporting from Turkic regions by local contributors",
+          "Publication in Turkic languages, English and French",
+          "A correction service with sources",
+          "Editorial standards: [to be published]"
+        ],
+        "facts": [
+          {
+            "label": "Status",
+            "value": "In preparation"
+          },
+          {
+            "label": "Launch",
+            "value": "[Planned date]"
+          },
+          {
+            "label": "Languages",
+            "value": "Turkic languages, English, French"
+          }
+        ],
+        "takePart": "We are looking for journalists, editors and translators. Contact us to contribute before the launch.",
+        "action": "Contact us"
+      },
+      "research-network": {
+        "name": "TurkicBlue Research Network",
+        "summary": "A network for researchers in Turkic studies.",
+        "body": [
+          "The TurkicBlue Research Network connects researchers in linguistics, history, archaeology, literature and the social sciences who work on the Turkic world.",
+          "It will provide shared bibliographies, archives and datasets, open-access publication with peer review, and workshops that bring researchers from different countries together."
+        ],
+        "points": [
+          "Shared bibliographies, archives and open datasets",
+          "Open-access publication with peer review",
+          "Workshops and joint projects across countries",
+          "Expert review of Turkipedia articles"
+        ],
+        "facts": [
+          {
+            "label": "Status",
+            "value": "Forming"
+          },
+          {
+            "label": "Membership",
+            "value": "Researchers and institutions"
+          },
+          {
+            "label": "Fields",
+            "value": "Linguistics, history, archaeology, literature, social sciences"
+          }
+        ],
+        "takePart": "Researchers and institutions can register their interest now.",
+        "action": "Register interest"
+      },
+      "dao": {
+        "name": "TurkicBlue DAO",
+        "summary": "The foundation's governance system on Ethereum.",
+        "body": [
+          "The TurkicBlue DAO will let members of the foundation propose and vote on how its funds are spent and which projects it supports.",
+          "Proposals, votes and payments will be recorded on the Ethereum blockchain, so anyone can check them."
+        ],
+        "points": [
+          "Proposals from any member",
+          "Open discussion in all working languages",
+          "Binding, public votes",
+          "A public record of payments"
+        ],
+        "facts": [
+          {
+            "label": "Status",
+            "value": "Planned"
+          },
+          {
+            "label": "Network",
+            "value": "Ethereum"
+          },
+          {
+            "label": "Membership model",
+            "value": "[To be decided]"
+          },
+          {
+            "label": "Launch",
+            "value": "[Planned date]"
+          }
+        ],
+        "takePart": "Subscribe to updates to hear when membership opens.",
+        "action": "How governance will work"
+      }
+    }
+  },
+  "Governance": {
+    "title": "Governance",
+    "lede": "The foundation will be governed by its members through a DAO, a decentralised autonomous organisation, on the Ethereum blockchain.",
+    "text": "Members will decide how funds are spent and which projects the foundation supports. Every proposal, vote and payment will be public. The model follows the kurultay, the assembly in which Turkic peoples historically made major decisions together.",
+    "stepsTitle": "How a decision is made",
+    "steps": [
+      {
+        "title": "Proposal",
+        "text": "A member submits a proposal: a project, a grant or a rule change."
+      },
+      {
+        "title": "Discussion",
+        "text": "Members discuss it openly, in any of the working languages."
+      },
+      {
+        "title": "Vote",
+        "text": "Members vote on chain. The result is binding and public."
+      },
+      {
+        "title": "Implementation",
+        "text": "The foundation carries it out and reports on the outcome."
+      }
+    ],
+    "circleLabel": "Illustration: members seated in a circle around a shared centre",
+    "principlesTitle": "Commitments",
+    "principles": [
+      {
+        "title": "Open content",
+        "text": "Text we publish is free to read and reuse under CC BY-SA 4.0."
+      },
+      {
+        "title": "Open decisions",
+        "text": "Proposals, votes and spending will be recorded publicly."
+      },
+      {
+        "title": "Open source",
+        "text": "Our software is developed in the open. [Repository link]"
+      },
+      {
+        "title": "Annual reporting",
+        "text": "We will publish accounts and an activity report every year. [First report: date]"
+      }
+    ],
+    "faqTitle": "Questions",
+    "faq": [
+      {
+        "q": "What is a DAO?",
+        "a": "A decentralised autonomous organisation is a set of rules that runs on a blockchain. Members submit proposals and vote, and the results are recorded publicly and carried out according to those rules."
+      },
+      {
+        "q": "Why Ethereum?",
+        "a": "Ethereum is widely used for this kind of governance and has established tools for proposals, voting and shared funds."
+      },
+      {
+        "q": "Who can become a member?",
+        "a": "Membership will be open to the community. [Membership model and requirements to be decided.]"
+      },
+      {
+        "q": "How is the foundation run until the DAO launches?",
+        "a": "[Interim governance: board members to be announced.]"
+      }
+    ]
+  },
+  "Involved": {
+    "title": "Get involved",
+    "lede": "The foundation depends on people who give their time and knowledge. These are the ways to take part today.",
+    "ways": [
+      {
+        "title": "Contributors",
+        "text": "Write, translate or review articles on Turkipedia. No special background is needed.",
+        "action": "Start on Turkipedia"
+      },
+      {
+        "title": "Researchers",
+        "text": "Join the research network, share sources and data, or review articles in your field.",
+        "action": "Contact us"
+      },
+      {
+        "title": "Journalists and translators",
+        "text": "Write or translate for Turquoise News ahead of its launch.",
+        "action": "Contact us"
+      },
+      {
+        "title": "Institutions",
+        "text": "Universities, archives, museums and cultural organisations can partner with us on content and research.",
+        "action": "Discuss a partnership"
+      },
+      {
+        "title": "Supporters",
+        "text": "Donations fund hosting, translation and research grants. [Donation details to follow]",
+        "action": "Contact us"
+      }
+    ],
+    "contactTitle": "Contact",
+    "contactText": "For questions, partnerships and press enquiries, write to us. We reply in English and Turkish.",
+    "email": "[contact email]"
+  },
+  "Newsletter": {
+    "title": "Stay informed",
+    "text": "Occasional updates on new projects, the DAO launch and ways to contribute.",
+    "label": "Email address",
+    "button": "Subscribe",
+    "notConnected": "Sign-ups aren't connected yet, so nothing was sent."
+  },
+  "Footer": {
+    "blurb": "An international, community-run organisation for the culture, history and languages of the Turkic peoples.",
+    "foundation": "Foundation",
+    "projects": "Projects",
+    "contact": "Contact",
+    "ourName": "Our name",
+    "email": "[contact email]",
+    "address": "[Registered address]",
+    "legal": "Privacy and legal notice",
+    "rights": "© {year} Turkic Blue Foundation. Content licensed under CC BY-SA 4.0 unless stated otherwise.",
+    "languages": "Languages"
+  },
+  "Legal": {
+    "title": "Privacy and legal notice",
+    "lede": "How this website handles your data, and who is responsible for it.",
+    "privacyTitle": "Privacy",
+    "privacy": [
+      "This website does not use tracking cookies or advertising.",
+      "If you subscribe to updates, we use your email address only to send them. [Provider and retention period to be confirmed.]",
+      "[Full privacy policy to be published.]"
+    ],
+    "noticeTitle": "Legal notice",
+    "notice": [
+      "Turkic Blue Foundation, [registered address], [registration number].",
+      "Responsible for content: [name]. Contact: [contact email]."
+    ]
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "text": "The page you were looking for doesn't exist or has moved.",
+    "home": "Go to the home page"
+  }
+}

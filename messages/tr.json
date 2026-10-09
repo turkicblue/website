@@ -1,0 +1,412 @@
+{
+  "Brand": {
+    "suffix": "Vakfı"
+  },
+  "Meta": {
+    "title": "Turkic Blue Vakfı",
+    "description": "Türk halklarının kültürü, tarihi ve dilleri için topluluk tarafından yürütülen uluslararası bir vakıf."
+  },
+  "Nav": {
+    "main": "Ana menü",
+    "home": "Ana sayfa",
+    "about": "Hakkımızda",
+    "projects": "Projeler",
+    "governance": "Yönetişim",
+    "getInvolved": "Katılın",
+    "skip": "İçeriğe geç",
+    "menu": "Menü",
+    "close": "Kapat"
+  },
+  "Sky": {
+    "label": "Giriş",
+    "title": "Türk mirasını korumak ve paylaşmak",
+    "text": "Turkic Blue Vakfı, Türk halklarının kültürü, tarihi ve dilleri için çalışan, topluluk tarafından yürütülen uluslararası bir kuruluştur.",
+    "primary": "Projelerimiz",
+    "secondary": "Katılın",
+    "scroll": "Kaydırın",
+    "stages": [
+      {
+        "label": "Kök Türük",
+        "title": "Göktürklerin kendilerine verdiği ad",
+        "text": "8. yüzyıla ait Orhun Yazıtları'nda Eski Türk harfleriyle yazılmıştır. Türk dillerinde günümüze ulaşan en eski metinler arasındadır. Sağdan sola okunur."
+      },
+      {
+        "label": "Kök: mavi, gök",
+        "title": "Adımız buradan geliyor",
+        "text": "Eski Türkçede kök hem mavi hem de gök anlamına gelir. Kelime bugün de Türk dillerinin hepsinde yaşıyor."
+      },
+      {
+        "label": "Şanırak",
+        "title": "Yurdun tacı",
+        "text": "Yurdun tepesinde, iskeletini bir arada tutan ahşap halka. Kırgızistan bayrağında ve Kazakistan arması üzerinde yer alır."
+      }
+    ]
+  },
+  "Home": {
+    "aboutTitle": "Vakıf hakkında",
+    "aboutLede": "Turkic Blue Vakfı; gönüllülerden, araştırmacılardan ve destekçilerden oluşan uluslararası bir topluluk tarafından yürütülen, kâr amacı gütmeyen bir kuruluştur.",
+    "aboutText": "Balkanlardan Sibirya'ya Türk halklarının kültürünü, tarihini ve dillerini belgeliyor ve paylaşıyoruz; bu bilginin özgür ve doğru olması için çalışıyoruz. Yanlış bilgilere yanıt veriyor, Türk topluluklarının itibarını ve haklarını savunuyoruz.",
+    "aboutMore": "Vakıf hakkında daha fazlası",
+    "projectsTitle": "Turkic Blue Vakfı projeleri",
+    "projectsLede": "Turkipedia yayında. Turquoise News, araştırma ağı ve DAO geliştirme aşamasında.",
+    "projectsMore": "Tüm projeler",
+    "governanceTitle": "Yönetişim",
+    "governanceLede": "Vakıf, üyeleri tarafından Ethereum üzerinde bir DAO aracılığıyla yönetilecek. Her öneri, oylama ve ödeme herkese açık olacak.",
+    "governanceMore": "Yönetişim nasıl işleyecek",
+    "involvedTitle": "Katılın",
+    "involvedLede": "Vakıf, zamanını ve bilgisini paylaşan insanlarla ayakta duruyor.",
+    "involvedMore": "Katılmanın tüm yolları"
+  },
+  "Work": {
+    "title": "Ne yapıyoruz",
+    "items": [
+      {
+        "title": "Korumak",
+        "text": "Tarihi, dilleri ve gelenekleri kayda geçirmek, kaynakları erişilebilir tutmak."
+      },
+      {
+        "title": "Temsil etmek",
+        "text": "Türk dünyasını kendi dillerinde, doğru biçimde anlatmak."
+      },
+      {
+        "title": "Paylaşmak",
+        "text": "Bilgiyi okunması ve yeniden kullanılması serbest olarak yayımlamak."
+      },
+      {
+        "title": "Kutlamak",
+        "text": "Türk sanatını, müziğini, edebiyatını ve bayramlarını tanıtmak."
+      },
+      {
+        "title": "Savunmak",
+        "text": "Yanlış bilgileri düzeltmek, Türk topluluklarının haklarını desteklemek."
+      }
+    ]
+  },
+  "Facts": {
+    "label": "Temel bilgiler",
+    "founded": "Kuruluş",
+    "foundedValue": "[Yıl]",
+    "registered": "Kayıtlı olduğu ülke",
+    "registeredValue": "[Ülke]",
+    "legalForm": "Hukuki yapı",
+    "legalFormValue": "[Kâr amacı gütmeyen vakıf]",
+    "licence": "İçerik lisansı",
+    "licenceValue": "CC BY-SA 4.0",
+    "languages": "Çalışma dilleri",
+    "languagesValue": "Türkçe, Azerbaycanca, Kazakça, Özbekçe, Uygurca, İngilizce, Fransızca"
+  },
+  "About": {
+    "title": "Vakıf hakkında",
+    "lede": "Turkic Blue Vakfı; gönüllülerden, araştırmacılardan ve destekçilerden oluşan uluslararası bir topluluk tarafından yürütülen, kâr amacı gütmeyen bir kuruluştur.",
+    "intro": [
+      "Balkanlardan Sibirya'ya Türk halklarının kültürünü, tarihini ve dillerini belgeliyor ve paylaşıyoruz; bu bilginin özgür ve doğru olması için çalışıyoruz.",
+      "Yanlış bilgilere yanıt veriyor, Türk topluluklarının itibarını ve haklarını savunuyoruz.",
+      "Çalışmalarımız açıktır. İçerikler özgür lisanslarla yayımlanır; fonların nasıl kullanılacağına vakfın üyeleri açık biçimde karar verecek."
+    ],
+    "peopleTitle": "Ekip",
+    "peopleText": "Vakıf, farklı ülkelerden gönüllüler tarafından yürütülüyor. [Yönetim kurulu ve danışmanlar açıklanacak.]",
+    "contactTitle": "İletişim",
+    "contactText": "Sorular, iş birlikleri ve basın talepleri için [iletişim e-postası] adresine yazın."
+  },
+  "Name": {
+    "title": "Neden “Blue”",
+    "lede": "Eski Türkçedeki kök kelimesi hem mavi hem de gök anlamına gelir. 6. ile 8. yüzyıllar arasında Orta Asya'ya yayılan kağanlığın sahibi Göktürkler kendilerine Kök Türük diyordu.",
+    "text": "Aynı kelime bugün Türk dillerinde Latin, Kiril ve Arap harfleriyle yaşıyor. Adımız da buradan geliyor.",
+    "caption": "Türk dillerinde mavi ya da gök anlamındaki kelime",
+    "word": "Kelime",
+    "language": "Dil",
+    "languages": {
+      "otk": "Eski Türkçe",
+      "tr": "Türkçe",
+      "az": "Azerbaycanca",
+      "tk": "Türkmence",
+      "uz": "Özbekçe",
+      "kk": "Kazakça",
+      "ky": "Kırgızca",
+      "ug": "Uygurca",
+      "tt": "Tatarca",
+      "sah": "Sahaca (Yakutça)"
+    }
+  },
+  "Projects": {
+    "title": "Turkic Blue Vakfı projeleri",
+    "lede": "Turkipedia yayında. Turquoise News, araştırma ağı ve DAO geliştirme aşamasında.",
+    "status": {
+      "live": "Yayında",
+      "preparation": "Hazırlanıyor",
+      "forming": "Kuruluyor",
+      "planned": "Planlandı"
+    },
+    "details": "Ayrıntılar",
+    "whatItDoes": "Neler sunuyor",
+    "takePart": "Nasıl katkıda bulunabilirsiniz",
+    "readMore": "Devamını okuyun",
+    "otherProjects": "Diğer projeler",
+    "items": {
+      "turkipedia": {
+        "name": "Turkipedia",
+        "summary": "Gönüllüler tarafından yazılan ve incelenen, Türk dünyasının özgür ansiklopedisi.",
+        "body": [
+          "Turkipedia; Türk dünyasının tarihini, halklarını, devletlerini, dillerini, edebiyatını, sanatını ve geleneklerini ele alır. Her madde yedi dilde yazılabilir: Türkçe, Azerbaycanca, Kazakça, Özbekçe, Uygurca, İngilizce ve Fransızca.",
+          "Her değişiklik yayımlanmadan önce incelenir, her sürüm saklanır ve her yazarın emeği belirtilir. İlk maddeler kaynak gösterilerek Türkçe Vikipedi'den aktarıldı; topluluk onları geliştirmeye devam ediyor."
+        ],
+        "points": [
+          "14.238 madde; yeni diller ekleniyor",
+          "Her değişiklik yayımlanmadan önce inceleniyor",
+          "Tam sürüm geçmişi ve yazar bilgisi",
+          "Özgür lisans: CC BY-SA 4.0"
+        ],
+        "facts": [
+          {
+            "label": "Durum",
+            "value": "Yayında"
+          },
+          {
+            "label": "Web sitesi",
+            "value": "turkipedia.org"
+          },
+          {
+            "label": "Dil sayısı",
+            "value": "7"
+          },
+          {
+            "label": "Lisans",
+            "value": "CC BY-SA 4.0"
+          }
+        ],
+        "takePart": "Herkes madde yazabilir, çevirebilir ya da inceleyebilir. Başlamak için Turkipedia'da bir hesap açın.",
+        "action": "turkipedia.org'a gidin"
+      },
+      "turquoise-news": {
+        "name": "Turquoise News",
+        "summary": "Türk dünyası hakkında bağımsız bir haber servisi.",
+        "body": [
+          "Turquoise News, Türk dünyasında toplum, kültür, bilim ve güncel olaylar üzerine haber yapacak. Haberler bölgede yaşayan insanlar tarafından yazılacak; Türk dillerinde, İngilizce ve Fransızca yayımlanacak.",
+          "Başka yayınlarda Türk halklarıyla ilgili yanlış bilgi verildiğinde, kaynaklarıyla birlikte düzeltme de yayımlayacak."
+        ],
+        "points": [
+          "Türk bölgelerinden yerel muhabirlerle haberler",
+          "Türk dillerinde, İngilizce ve Fransızca yayın",
+          "Kaynak gösteren bir düzeltme servisi",
+          "Yayın ilkeleri: [yayımlanacak]"
+        ],
+        "facts": [
+          {
+            "label": "Durum",
+            "value": "Hazırlanıyor"
+          },
+          {
+            "label": "Yayın tarihi",
+            "value": "[Planlanan tarih]"
+          },
+          {
+            "label": "Diller",
+            "value": "Türk dilleri, İngilizce, Fransızca"
+          }
+        ],
+        "takePart": "Gazeteciler, editörler ve çevirmenler arıyoruz. Yayından önce katkıda bulunmak için bize yazın.",
+        "action": "Bize yazın"
+      },
+      "research-network": {
+        "name": "TurkicBlue Araştırma Ağı",
+        "summary": "Türkoloji alanındaki araştırmacılar için bir ağ.",
+        "body": [
+          "TurkicBlue Araştırma Ağı, Türk dünyası üzerine çalışan dilbilim, tarih, arkeoloji, edebiyat ve sosyal bilimler araştırmacılarını bir araya getirir.",
+          "Ortak kaynakçalar, arşivler ve veri setleri; hakemli açık erişim yayın; farklı ülkelerden araştırmacıları buluşturan çalıştaylar sunacak."
+        ],
+        "points": [
+          "Ortak kaynakçalar, arşivler ve açık veri setleri",
+          "Hakemli açık erişim yayın",
+          "Ülkeler arası çalıştaylar ve ortak projeler",
+          "Turkipedia maddelerinin uzmanlarca incelenmesi"
+        ],
+        "facts": [
+          {
+            "label": "Durum",
+            "value": "Kuruluyor"
+          },
+          {
+            "label": "Üyelik",
+            "value": "Araştırmacılar ve kurumlar"
+          },
+          {
+            "label": "Alanlar",
+            "value": "Dilbilim, tarih, arkeoloji, edebiyat, sosyal bilimler"
+          }
+        ],
+        "takePart": "Araştırmacılar ve kurumlar şimdiden ilgilerini bildirebilir.",
+        "action": "İlgimi bildir"
+      },
+      "dao": {
+        "name": "TurkicBlue DAO",
+        "summary": "Vakfın Ethereum üzerindeki yönetişim sistemi.",
+        "body": [
+          "TurkicBlue DAO, vakfın üyelerinin fonların nasıl harcanacağını ve hangi projelerin destekleneceğini önermesini ve oylamasını sağlayacak.",
+          "Öneriler, oylar ve ödemeler Ethereum blokzincirine kaydedilecek; böylece herkes bunları denetleyebilecek."
+        ],
+        "points": [
+          "Her üye öneri sunabilir",
+          "Tüm çalışma dillerinde açık tartışma",
+          "Bağlayıcı ve herkese açık oylamalar",
+          "Ödemelerin herkese açık kaydı"
+        ],
+        "facts": [
+          {
+            "label": "Durum",
+            "value": "Planlandı"
+          },
+          {
+            "label": "Ağ",
+            "value": "Ethereum"
+          },
+          {
+            "label": "Üyelik modeli",
+            "value": "[Belirlenecek]"
+          },
+          {
+            "label": "Başlangıç",
+            "value": "[Planlanan tarih]"
+          }
+        ],
+        "takePart": "Üyelik açıldığında haberdar olmak için bültene abone olun.",
+        "action": "Yönetişim nasıl işleyecek"
+      }
+    }
+  },
+  "Governance": {
+    "title": "Yönetişim",
+    "lede": "Vakıf, üyeleri tarafından Ethereum blokzinciri üzerinde bir DAO (merkeziyetsiz özerk organizasyon) aracılığıyla yönetilecek.",
+    "text": "Fonların nasıl harcanacağına ve vakfın hangi projeleri destekleyeceğine üyeler karar verecek. Her öneri, oylama ve ödeme herkese açık olacak. Model, Türk halklarının tarihte önemli kararları birlikte aldığı kurultaya dayanıyor.",
+    "stepsTitle": "Bir karar nasıl alınır",
+    "steps": [
+      {
+        "title": "Öneri",
+        "text": "Bir üye öneri sunar: bir proje, bir hibe ya da bir kural değişikliği."
+      },
+      {
+        "title": "Tartışma",
+        "text": "Üyeler öneriyi çalışma dillerinden herhangi birinde açıkça tartışır."
+      },
+      {
+        "title": "Oylama",
+        "text": "Üyeler zincir üzerinde oy verir. Sonuç bağlayıcıdır ve herkese açıktır."
+      },
+      {
+        "title": "Uygulama",
+        "text": "Vakıf kararı uygular ve sonucunu raporlar."
+      }
+    ],
+    "circleLabel": "Görsel: ortak bir merkezin çevresinde halka hâlinde oturan üyeler",
+    "principlesTitle": "Taahhütlerimiz",
+    "principles": [
+      {
+        "title": "Açık içerik",
+        "text": "Yayımladığımız metinler CC BY-SA 4.0 lisansıyla serbestçe okunabilir ve kullanılabilir."
+      },
+      {
+        "title": "Açık kararlar",
+        "text": "Öneriler, oylar ve harcamalar herkese açık olarak kaydedilecek."
+      },
+      {
+        "title": "Açık kaynak",
+        "text": "Yazılımlarımızı açık kaynak olarak geliştiriyoruz. [Depo bağlantısı]"
+      },
+      {
+        "title": "Yıllık raporlama",
+        "text": "Her yıl mali tabloları ve bir faaliyet raporunu yayımlayacağız. [İlk rapor: tarih]"
+      }
+    ],
+    "faqTitle": "Sorular",
+    "faq": [
+      {
+        "q": "DAO nedir?",
+        "a": "Merkeziyetsiz özerk organizasyon, bir blokzincir üzerinde çalışan kurallar bütünüdür. Üyeler öneri sunar ve oy verir; sonuçlar herkese açık olarak kaydedilir ve bu kurallara göre uygulanır."
+      },
+      {
+        "q": "Neden Ethereum?",
+        "a": "Ethereum bu tür yönetişim için yaygın olarak kullanılıyor; öneriler, oylama ve ortak fonlar için yerleşik araçlara sahip."
+      },
+      {
+        "q": "Kimler üye olabilir?",
+        "a": "Üyelik topluluğa açık olacak. [Üyelik modeli ve koşulları belirlenecek.]"
+      },
+      {
+        "q": "DAO kurulana kadar vakıf nasıl yönetiliyor?",
+        "a": "[Geçiş dönemi yönetimi: yönetim kurulu üyeleri açıklanacak.]"
+      }
+    ]
+  },
+  "Involved": {
+    "title": "Katılın",
+    "lede": "Vakıf, zamanını ve bilgisini paylaşan insanlarla ayakta duruyor. Bugün katılmanın yolları şunlar.",
+    "ways": [
+      {
+        "title": "Gönüllü yazarlar",
+        "text": "Turkipedia'da madde yazın, çevirin ya da inceleyin. Özel bir uzmanlık gerekmez.",
+        "action": "Turkipedia'da başlayın"
+      },
+      {
+        "title": "Araştırmacılar",
+        "text": "Araştırma ağına katılın, kaynak ve veri paylaşın ya da alanınızdaki maddeleri inceleyin.",
+        "action": "Bize yazın"
+      },
+      {
+        "title": "Gazeteciler ve çevirmenler",
+        "text": "Yayın başlamadan Turquoise News için yazın ya da çeviri yapın.",
+        "action": "Bize yazın"
+      },
+      {
+        "title": "Kurumlar",
+        "text": "Üniversiteler, arşivler, müzeler ve kültür kuruluşları içerik ve araştırma konusunda bizimle iş birliği yapabilir.",
+        "action": "İş birliğini konuşalım"
+      },
+      {
+        "title": "Destekçiler",
+        "text": "Bağışlar barındırma, çeviri ve araştırma hibelerini finanse ediyor. [Bağış bilgileri yakında]",
+        "action": "Bize yazın"
+      }
+    ],
+    "contactTitle": "İletişim",
+    "contactText": "Sorular, iş birlikleri ve basın talepleri için bize yazın. Türkçe ve İngilizce yanıt veriyoruz.",
+    "email": "[iletişim e-postası]"
+  },
+  "Newsletter": {
+    "title": "Haberdar olun",
+    "text": "Yeni projeler, DAO'nun açılışı ve katkı yolları hakkında ara sıra güncellemeler.",
+    "label": "E-posta adresi",
+    "button": "Abone ol",
+    "notConnected": "Abonelik henüz bağlı değil; hiçbir şey gönderilmedi."
+  },
+  "Footer": {
+    "blurb": "Türk halklarının kültürü, tarihi ve dilleri için topluluk tarafından yürütülen uluslararası bir kuruluş.",
+    "foundation": "Vakıf",
+    "projects": "Projeler",
+    "contact": "İletişim",
+    "ourName": "Adımız",
+    "email": "[iletişim e-postası]",
+    "address": "[Kayıtlı adres]",
+    "legal": "Gizlilik ve yasal bilgiler",
+    "rights": "© {year} Turkic Blue Vakfı. Aksi belirtilmedikçe içerik CC BY-SA 4.0 ile lisanslanmıştır.",
+    "languages": "Diller"
+  },
+  "Legal": {
+    "title": "Gizlilik ve yasal bilgiler",
+    "lede": "Bu sitenin verilerinizi nasıl işlediği ve sorumlu kişi.",
+    "privacyTitle": "Gizlilik",
+    "privacy": [
+      "Bu site izleme çerezi ya da reklam kullanmaz.",
+      "Bültene abone olursanız e-posta adresinizi yalnızca bülteni göndermek için kullanırız. [Hizmet sağlayıcı ve saklama süresi netleştirilecek.]",
+      "[Gizlilik politikasının tamamı yayımlanacak.]"
+    ],
+    "noticeTitle": "Yasal bilgiler",
+    "notice": [
+      "Turkic Blue Vakfı, [kayıtlı adres], [sicil numarası].",
+      "İçerikten sorumlu: [ad soyad]. İletişim: [iletişim e-postası]."
+    ]
+  },
+  "NotFound": {
+    "title": "Sayfa bulunamadı",
+    "text": "Aradığınız sayfa yok ya da taşınmış.",
+    "home": "Ana sayfaya dönün"
+  }
+}

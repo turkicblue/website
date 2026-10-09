@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+/*
+ * Turkic Blue Foundation design tokens.
+ * Night sky (the hero and page headers): deep blue-green, stars in white and turquoise.
+ * Content: white and light gray, ink text, turquoise for links and accents (the darker
+ * turquoise-ink where it sits on white, for contrast).
+ */
+:root {
+  color-scheme: light;
+  --night: #04121b;
+  --night-2: #082433;
+  --horizon: #0e3a4a;
+  --turquoise: #3bd1c2;
+  --turquoise-ink: #0b7268;
+  --star: #f2f7f8;
+  --mist: #a9bcc4;
+  --white: #ffffff;
+  --paper: #f3f6f7;
+  --line: #dce3e6;
+  --ink: #0d1b24;
+  --gray: #56656e;
+}
+
+@theme inline {
+  --color-night: var(--night);
+  --color-night-2: var(--night-2);
+  --color-horizon: var(--horizon);
+  --color-turquoise: var(--turquoise);
+  --color-turquoise-ink: var(--turquoise-ink);
+  --color-star: var(--star);
+  --color-mist: var(--mist);
+  --color-paper: var(--paper);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-gray: var(--gray);
+  --font-display: var(--font-jost), "Futura", "Century Gothic", system-ui, sans-serif;
+  --font-sans: var(--font-plex), var(--font-plex-arabic), "Helvetica Neue", Arial, sans-serif;
+  --font-rune: var(--font-old-turkic), sans-serif;
+  --font-naskh: var(--font-naskh), "Geeza Pro", serif;
+}
+
+html {
+  background: var(--white);
+}
+
+body {
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  text-wrap: balance;
+}
+
+:focus-visible {
+  outline: 2px solid var(--turquoise);
+  outline-offset: 3px;
+}
+
+[lang="ug"] {
+  font-family: var(--font-naskh), var(--font-plex-arabic), serif;
+}
+
+/* The night sky behind page headers: two layers of fixed stars. */
+.night-sky {
+  background-color: var(--night);
+  background-image:
+    radial-gradient(1px 1px at 12% 22%, rgb(242 247 248 / 0.8), transparent),
+    radial-gradient(1px 1px at 28% 68%, rgb(242 247 248 / 0.6), transparent),
+    radial-gradient(1.5px 1.5px at 46% 34%, rgb(59 209 194 / 0.8), transparent),
+    radial-gradient(1px 1px at 63% 18%, rgb(242 247 248 / 0.7), transparent),
+    radial-gradient(1px 1px at 72% 76%, rgb(242 247 248 / 0.5), transparent),
+    radial-gradient(1.5px 1.5px at 84% 44%, rgb(242 247 248 / 0.8), transparent),
+    radial-gradient(1px 1px at 92% 12%, rgb(59 209 194 / 0.6), transparent),
+    radial-gradient(1px 1px at 6% 86%, rgb(242 247 248 / 0.5), transparent),
+    linear-gradient(180deg, var(--night) 0%, var(--night-2) 70%, var(--horizon) 100%);
+}
+
+.scroll-drip {
+  animation: drip 2.2s ease-in-out infinite;
+  transform-origin: top;
+}
+
+@keyframes drip {
+  0%,
+  100% {
+    transform: scaleY(0.4);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-drip {
+    animation: none;
+  }
+}

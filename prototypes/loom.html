@@ -1,0 +1,678 @@
+<title>TurkicBlue Dokuma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Alegreya+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Silkscreen&family=Noto+Naskh+Arabic:wght@500&display=swap" rel="stylesheet">
+<style>
+/* Layout: a live loom fills the opening; the page below is woven fabric, bands and swatches. */
+:root {
+  color-scheme: light;
+  --wool: #F2EEE6;
+  --indigo: #1F2A5C;
+  --indigo-deep: #161E44;
+  --madder: #A32638;
+  --weld: #E2A42B;
+  --firuze: #138A84;
+  --ink: #1C1F33;
+  --mute: #555A72;
+  --display: "Bricolage Grotesque", "Arial Narrow", system-ui, sans-serif;
+  --body: "Alegreya Sans", "Gill Sans", system-ui, sans-serif;
+  --pixel: "Silkscreen", monospace;
+  --gutter: clamp(16px, 4vw, 56px);
+}
+* { box-sizing: border-box; }
+html { background: var(--wool); }
+body { background: var(--wool); color: var(--ink); font-family: var(--body); font-size: 19px; line-height: 1.55; overflow-x: hidden; }
+a { color: var(--indigo); }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid var(--weld); outline-offset: 3px; }
+h1, h2, h3 { font-family: var(--display); font-variation-settings: "wdth" 78; margin: 0; line-height: 0.98; text-wrap: balance; letter-spacing: -0.01em; }
+p { margin: 0; }
+.wrap { max-width: 1240px; margin-inline: auto; padding-inline: var(--gutter); }
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 0 24px; font-family: var(--body); font-weight: 700; font-size: 18px; text-decoration: none; border: 2px solid transparent; cursor: pointer; border-radius: 3px; }
+.btn-weld { background: var(--weld); color: var(--ink); }
+.btn-weld:hover { background: #F0B848; }
+.btn-line { border-color: var(--wool); color: var(--wool); background: transparent; }
+.btn-line:hover { background: rgba(242, 238, 230, 0.12); }
+.btn-ink { background: var(--indigo); color: var(--wool); }
+
+.topbar { position: absolute; inset: 0 0 auto; z-index: 10; padding-top: env(safe-area-inset-top, 0px); color: var(--wool); }
+.topbar .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-block: 18px; }
+.mark { display: flex; align-items: center; gap: 10px; color: var(--wool); text-decoration: none; font-family: var(--display); font-weight: 800; font-size: 22px; }
+.mark i { width: 22px; height: 22px; background: conic-gradient(from 45deg, var(--weld) 25%, var(--madder) 0 50%, var(--weld) 0 75%, var(--madder) 0); clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); }
+.topbar nav { display: flex; gap: 24px; font-size: 17px; }
+.topbar nav a { color: var(--wool); text-decoration: none; opacity: 0.85; }
+.topbar nav a:hover { opacity: 1; }
+@media (max-width: 640px) { .topbar nav a:not(:last-child) { display: none; } }
+
+/* Hero loom */
+.hero { position: relative; height: 150vh; height: 150svh; min-height: 980px; background: var(--indigo); color: var(--wool); overflow: hidden; }
+#loom { position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: pan-y; }
+.hero-copy { position: relative; z-index: 2; padding-top: clamp(96px, 16vh, 150px); pointer-events: none; }
+.hero-copy h1 { font-size: clamp(48px, 8.4vw, 132px); font-weight: 800; max-width: 11ch; text-shadow: 0 2px 0 var(--indigo-deep); }
+.hero-copy .lede { max-width: 46ch; margin-top: 22px; font-size: clamp(17px, 1.4vw, 21px); color: #E6E3F0; text-shadow: 0 1px 10px var(--indigo); }
+.hero-copy .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; pointer-events: auto; }
+.hero-copy .hint { margin-top: 18px; font-size: 15px; opacity: 0.8; }
+
+/* Projects: a strip woven as you scroll */
+.weave { position: relative; height: 480vh; background: var(--wool); }
+.weave-stage { position: sticky; top: 0; height: 100vh; height: 100svh; display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(24px, 5vw, 72px); align-items: center; padding-inline: var(--gutter); max-width: 1320px; margin-inline: auto; }
+@media (max-width: 860px) { .weave-stage { grid-template-columns: minmax(0, 1fr); grid-template-rows: 44% 56%; gap: 12px; padding-block: 16px; } }
+.strip { position: relative; height: 82vh; height: 82svh; max-height: 820px; align-self: center; }
+@media (max-width: 860px) { .strip { height: 100%; } }
+#strip { width: 100%; height: 100%; display: block; }
+.strip::after { content: ""; position: absolute; left: 0; right: 0; bottom: -10px; height: 10px; background: repeating-linear-gradient(90deg, var(--wool) 0 3px, transparent 3px 7px); opacity: 0.9; }
+.weave-panels { position: relative; height: 100%; }
+.wpanel { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 14px; opacity: 0; transform: translateY(24px); transition: opacity 0.5s, transform 0.6s cubic-bezier(.2, .8, .2, 1); pointer-events: none; }
+.wpanel.on { opacity: 1; transform: none; pointer-events: auto; }
+.wpanel .motif-name { font-family: var(--pixel); font-size: 13px; color: var(--madder); letter-spacing: 0.06em; }
+.wpanel h2 { font-size: clamp(40px, 5.6vw, 84px); font-weight: 800; color: var(--indigo); }
+.wpanel p { max-width: 44ch; color: var(--mute); }
+.wpanel .status { font-weight: 700; color: var(--madder); }
+.wpanel .status.live { color: #1C6B3B; }
+.wpanel .facts { display: flex; gap: 32px; }
+.wpanel .facts b { display: block; font-family: var(--display); font-weight: 800; font-size: 44px; color: var(--indigo); line-height: 1; font-variant-numeric: tabular-nums; }
+.wpanel .facts span { font-size: 15px; color: var(--mute); }
+.weave-intro { padding-block: clamp(80px, 10vw, 140px) 0; }
+.weave-intro h2 { font-size: clamp(38px, 5.4vw, 80px); font-weight: 800; color: var(--indigo); max-width: 16ch; }
+.weave-intro p { max-width: 54ch; color: var(--mute); margin-top: 18px; }
+
+/* Make a motif */
+.maker { padding-block: clamp(88px, 10vw, 140px); background: var(--indigo); color: var(--wool); }
+.maker .wrap { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 0.9fr); gap: clamp(28px, 4vw, 64px); align-items: center; }
+@media (max-width: 960px) { .maker .wrap { grid-template-columns: minmax(0, 1fr); } }
+.maker h2 { font-size: clamp(36px, 4.6vw, 66px); font-weight: 800; margin-bottom: 18px; }
+.maker p { color: #D9D6E6; max-width: 44ch; }
+.maker p + p { margin-top: 12px; }
+.maker .soon { color: var(--weld); font-size: 16px; }
+.quarter { display: grid; grid-template-columns: repeat(7, 38px); gap: 4px; padding: 14px; background: var(--indigo-deep); border-radius: 4px; }
+@media (max-width: 420px) { .quarter { grid-template-columns: repeat(7, 34px); } }
+.quarter button { width: 100%; aspect-ratio: 1; border: 0; border-radius: 2px; background: #2C386F; cursor: pointer; padding: 0; }
+.quarter button[aria-pressed="true"] { background: var(--weld); }
+.quarter button:hover { box-shadow: inset 0 0 0 2px var(--wool); }
+.maker-tools { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.maker-tools button { min-height: 44px; padding: 0 14px; border-radius: 3px; border: 1px solid rgba(242, 238, 230, 0.5); background: transparent; color: var(--wool); font: inherit; font-size: 16px; cursor: pointer; }
+.maker-tools button:hover { background: rgba(242, 238, 230, 0.1); }
+#rug { width: 100%; max-width: 360px; aspect-ratio: 3 / 4; display: block; margin-inline: auto; border-radius: 2px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35); }
+
+/* Mission */
+.mission { padding-block: clamp(88px, 10vw, 140px); }
+.mission h2 { font-size: clamp(36px, 4.6vw, 66px); font-weight: 800; color: var(--indigo); margin-bottom: 44px; max-width: 14ch; }
+.threads { list-style: none; margin: 0; padding: 0; }
+.threads li { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 8px 40px; padding: 26px 0; border-top: 3px dashed rgba(31, 42, 92, 0.25); }
+.threads li:last-child { border-bottom: 3px dashed rgba(31, 42, 92, 0.25); }
+@media (max-width: 760px) { .threads li { grid-template-columns: minmax(0, 1fr); } }
+.threads b { font-family: var(--display); font-weight: 800; font-variation-settings: "wdth" 75; font-size: clamp(38px, 5vw, 72px); line-height: 1; color: var(--indigo); display: flex; align-items: center; gap: 16px; }
+.threads b::before { content: ""; width: 18px; height: 18px; flex: 0 0 auto; background: var(--c, var(--madder)); clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); }
+.threads span { color: var(--mute); align-self: center; max-width: 48ch; }
+
+/* DAO */
+.dao { background: var(--madder); color: var(--wool); }
+.hands-band { height: 56px; background-color: var(--indigo); }
+.dao .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 96px); padding-block: clamp(72px, 9vw, 120px); }
+@media (max-width: 860px) { .dao .wrap { grid-template-columns: minmax(0, 1fr); } }
+.dao h2 { font-size: clamp(36px, 4.6vw, 66px); font-weight: 800; margin-bottom: 18px; }
+.dao p { color: #F6E3E3; max-width: 50ch; }
+.dao .todo { margin-top: 14px; color: #FFE1A3; font-size: 17px; }
+.dao ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; counter-reset: s; }
+.dao li { counter-increment: s; display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 14px; align-items: start; padding: 18px; background: rgba(22, 30, 68, 0.28); border-radius: 3px; }
+.dao li::before { content: counter(s); font-family: var(--pixel); font-size: 22px; color: var(--weld); line-height: 1.4; }
+.dao li b { display: block; font-family: var(--display); font-weight: 800; font-size: 22px; }
+.notify { display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end; margin-top: 26px; }
+.notify label { display: flex; flex-direction: column; gap: 6px; flex: 1 1 240px; font-size: 16px; }
+.notify input { min-height: 50px; padding: 0 14px; border-radius: 3px; border: 2px solid rgba(242, 238, 230, 0.6); background: rgba(22, 30, 68, 0.3); color: var(--wool); font: inherit; }
+.notify input::placeholder { color: #E8C9C9; }
+.notify-note { flex-basis: 100%; font-size: 15px; color: #FFE1A3; min-height: 1.3em; }
+
+/* Join: swatches that turn over */
+.join { padding-block: clamp(88px, 10vw, 140px); }
+.join h2 { font-size: clamp(36px, 4.6vw, 66px); font-weight: 800; color: var(--indigo); margin-bottom: 40px; }
+.swatches { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px; }
+.swatch { perspective: 1100px; min-height: 300px; }
+.swatch-inner { position: relative; height: 100%; min-height: 300px; transform-style: preserve-3d; transition: transform 0.8s cubic-bezier(.3, 1.3, .4, 1); }
+.swatch:hover .swatch-inner, .swatch:focus-within .swatch-inner, .swatch.turned .swatch-inner { transform: rotateY(180deg); }
+.side { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; border-radius: 4px; padding: 26px; display: flex; flex-direction: column; justify-content: flex-end; gap: 10px; }
+.side.front { color: var(--wool); background-color: var(--c1); }
+.side.front h3 { font-size: 34px; font-weight: 800; background: var(--indigo-deep); padding: 10px 14px; align-self: flex-start; }
+.side.back { transform: rotateY(180deg); background: #FFFFFF; border: 3px solid var(--c1); justify-content: space-between; }
+.side.back h3 { font-size: 30px; font-weight: 800; color: var(--indigo); }
+.side.back p { color: var(--mute); }
+.zig { --a: var(--madder); --b: var(--indigo); background:
+  linear-gradient(135deg, var(--a) 25%, transparent 25%) -18px 0 / 36px 36px,
+  linear-gradient(225deg, var(--a) 25%, transparent 25%) -18px 0 / 36px 36px,
+  linear-gradient(315deg, var(--a) 25%, transparent 25%) 0 0 / 36px 36px,
+  linear-gradient(45deg, var(--a) 25%, var(--b) 25%) 0 0 / 36px 36px; }
+.dia { background:
+  linear-gradient(45deg, var(--weld) 25%, transparent 25%, transparent 75%, var(--weld) 75%) 0 0 / 40px 40px,
+  linear-gradient(45deg, var(--weld) 25%, transparent 25%, transparent 75%, var(--weld) 75%) 20px 20px / 40px 40px,
+  var(--firuze); }
+.stripe { background: repeating-linear-gradient(0deg, var(--indigo) 0 14px, var(--weld) 14px 18px, var(--madder) 18px 30px, var(--weld) 30px 34px); }
+
+footer { background: var(--indigo-deep); color: #CFCDE0; padding-block: 48px; font-size: 16px; }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; }
+footer strong { display: block; font-family: var(--display); font-weight: 800; font-size: 22px; color: var(--wool); margin-bottom: 6px; }
+footer nav { display: flex; flex-wrap: wrap; gap: 8px 18px; max-width: 520px; }
+footer nav a { color: var(--wool); text-decoration: none; }
+footer nav a:hover { text-decoration: underline; }
+[lang="ug"] { font-family: "Noto Naskh Arabic", serif; }
+
+@media (prefers-reduced-motion: reduce) {
+  .weave { height: auto; }
+  .weave-stage { position: relative; height: auto; grid-template-rows: none; padding-block: 48px; }
+  .strip { height: 70vh; }
+  .weave-panels { height: auto; display: grid; gap: 40px; }
+  .wpanel { position: relative; opacity: 1; transform: none; pointer-events: auto; }
+  .swatch-inner { transition: none; }
+}
+</style>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="mark" href="#top"><i aria-hidden="true"></i>TurkicBlue</a>
+    <nav aria-label="Main"><a href="#projects">Projects</a><a href="#motif">Weave a motif</a><a href="#dao">The DAO</a><a href="#join">Join</a></nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="hero-title">
+    <canvas id="loom" aria-hidden="true"></canvas>
+    <div class="wrap hero-copy">
+      <h1 id="hero-title">A pattern no one could weave alone.</h1>
+      <p class="lede">TurkicBlue is an international community. Like a kilim, it grows thread by thread: we preserve, represent and celebrate Turkic culture, history and knowledge, and stand up for the reputation and rights of Turkic peoples.</p>
+      <div class="actions"><a class="btn btn-weld" href="#join">Join the community</a><a class="btn btn-line" href="https://turkipedia.org">Read Turkipedia</a></div>
+      <p class="hint">Move your pointer across the threads.</p>
+    </div>
+  </section>
+
+  <section class="weave-intro" id="projects" aria-labelledby="weave-title">
+    <div class="wrap">
+      <h2 id="weave-title">Four projects, four bands of one kilim</h2>
+      <p>Every motif on a kilim carries a meaning that weavers from Anatolia to the Altai still recognise. Keep scrolling and the loom weaves one band for each project of the TurkicBlue Foundation.</p>
+    </div>
+  </section>
+
+  <section class="weave" aria-label="Projects, woven">
+    <div class="weave-stage">
+      <div class="strip"><canvas id="strip" aria-hidden="true"></canvas></div>
+      <div class="weave-panels">
+        <article class="wpanel on" data-band="0">
+          <p class="motif-name">Hayat ağacı, the tree of life</p>
+          <h2>Turkipedia</h2>
+          <p>The free encyclopedia of the Turkic world, written and reviewed by its readers in Turkish, Azerbaijani, Kazakh, Uzbek, Uyghur, English and French. The tree of life is what one generation hands to the next.</p>
+          <div class="facts"><div><b>14,238</b><span>articles</span></div><div><b>7</b><span>languages</span></div></div>
+          <p class="status live">Live at turkipedia.org</p>
+          <div><a class="btn btn-ink" href="https://turkipedia.org">Read Turkipedia</a></div>
+        </article>
+        <article class="wpanel" data-band="1">
+          <p class="motif-name">Kuş, the bird</p>
+          <h2>Turquoise News</h2>
+          <p>News from and about the Turkic world, in its own languages, from people who live there. In weavers' lore the bird brings news from far away. Turquoise is the Turkish stone: Europe named it for the lands it came through.</p>
+          <p class="status">In preparation</p>
+        </article>
+        <article class="wpanel" data-band="2">
+          <p class="motif-name">Yıldız, the star</p>
+          <h2>TurkicBlue Research Network</h2>
+          <p>Linguists, historians, archaeologists and social scientists working on the Turkic world: shared sources, open datasets, peer review, and a home for work that falls between national academies. The star is good fortune, and a light to steer by.</p>
+          <p class="status">Forming</p>
+        </article>
+        <article class="wpanel" data-band="3">
+          <p class="motif-name">El ele, hand in hand</p>
+          <h2>TurkicBlue DAO</h2>
+          <p>A kurultay on Ethereum. Members propose what the foundation funds and builds, debate it, and vote in the open. Hand in hand: unity and solidarity.</p>
+          <p class="status">Planned</p>
+          <div><a class="btn btn-ink" href="#dao">How it will work</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="maker" id="motif" aria-labelledby="maker-title">
+    <div class="wrap">
+      <div>
+        <h2 id="maker-title">Weave your own motif</h2>
+        <p>Kilim motifs are mirrored four ways. Draw one quarter on the grid, and the loom repeats it into a rug.</p>
+        <p class="soon">When the DAO opens, each member will add a motif to one shared kilim. [Coming with the DAO]</p>
+      </div>
+      <div>
+        <div class="quarter" id="quarter" role="group" aria-label="Quarter of the motif, 7 by 7"></div>
+        <div class="maker-tools">
+          <button type="button" data-preset="goz">Göz, the eye</button>
+          <button type="button" data-preset="star">Yıldız, the star</button>
+          <button type="button" data-preset="clear">Clear</button>
+        </div>
+      </div>
+      <canvas id="rug" width="360" height="480" role="img" aria-label="Your motif, repeated into a small rug"></canvas>
+    </div>
+  </section>
+
+  <section class="mission" aria-labelledby="mission-title">
+    <div class="wrap">
+      <h2 id="mission-title">What the threads hold together</h2>
+      <ul class="threads">
+        <li style="--c: var(--weld)"><b>Preserve</b><span>Record history, language and tradition before they are lost: epics, songs, recipes, inscriptions and the people who remember them.</span></li>
+        <li style="--c: var(--madder)"><b>Represent</b><span>Show the Turkic world as its own people know it, in their own languages and scripts.</span></li>
+        <li style="--c: var(--firuze)"><b>Spread</b><span>Make that knowledge free to read, cite and share, under an open licence.</span></li>
+        <li style="--c: var(--weld)"><b>Celebrate</b><span>Give music, craft, food, festivals and new work the attention they deserve.</span></li>
+        <li style="--c: var(--madder)"><b>Protect</b><span>Answer misinformation with sources, and defend the reputation and rights of Turkic peoples.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="dao" id="dao" aria-labelledby="dao-title">
+    <div class="hands-band" id="hands-band" aria-hidden="true"></div>
+    <div class="wrap">
+      <div>
+        <h2 id="dao-title">Decided hand in hand</h2>
+        <p>For centuries Turkic peoples settled the big questions in the kurultay, an assembly of everyone with a stake. The TurkicBlue DAO brings that to the foundation, on Ethereum, where every decision stays on the record.</p>
+        <p class="todo">Membership: [token or non-transferable badge, to be decided]. Opens: [date to be announced].</p>
+        <form class="notify" id="notify">
+          <label for="notify-email">Email me when the DAO opens<input id="notify-email" type="email" autocomplete="email" placeholder="you@example.org" required></label>
+          <button class="btn btn-weld" type="submit">Notify me</button>
+          <p class="notify-note" id="notify-note" role="status"></p>
+        </form>
+      </div>
+      <ol>
+        <li><div><b>Propose</b>Any member can put forward a project, a grant or a change to the rules.</div></li>
+        <li><div><b>Debate</b>The proposal is discussed in the open, in any of our languages.</div></li>
+        <li><div><b>Vote</b>Members vote on chain. The result is public and final.</div></li>
+        <li><div><b>Carry out</b>The foundation does the work and reports back on what the money did.</div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="join" id="join" aria-labelledby="join-title">
+    <div class="wrap">
+      <h2 id="join-title">Pick up a thread</h2>
+      <div class="swatches">
+        <article class="swatch">
+          <div class="swatch-inner">
+            <div class="side front zig" style="--c1: var(--madder)"><h3>Write</h3></div>
+            <div class="side back" style="--c1: var(--madder)"><h3>Write for Turkipedia</h3><p>Start an article, translate one into your language, or review other people's edits.</p><a class="btn btn-ink" href="https://turkipedia.org">Open Turkipedia</a></div>
+          </div>
+        </article>
+        <article class="swatch">
+          <div class="swatch-inner">
+            <div class="side front dia" style="--c1: var(--firuze)"><h3>Report</h3></div>
+            <div class="side back" style="--c1: var(--firuze)"><h3>Report for Turquoise News</h3><p>Send stories from where you live, or help check facts before they're published.</p><a class="btn btn-ink" href="#join">Get in touch</a></div>
+          </div>
+        </article>
+        <article class="swatch">
+          <div class="swatch-inner">
+            <div class="side front stripe" style="--c1: var(--indigo)"><h3>Research</h3></div>
+            <div class="side back" style="--c1: var(--indigo)"><h3>Research with us</h3><p>Bring your sources, your data or your questions to the research network.</p><a class="btn btn-ink" href="#join">Join the network</a></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><strong>TurkicBlue Foundation</strong>[contact email]<br>Text on our sites is free to reuse under CC BY-SA 4.0.</div>
+    <nav aria-label="Languages"><a href="#top" lang="tr">Türkçe</a><a href="#top" lang="az">Azərbaycanca</a><a href="#top" lang="kk">Қазақша</a><a href="#top" lang="uz">Oʻzbekcha</a><a href="#top" lang="ug" dir="rtl">ئۇيغۇرچە</a><a href="#top" lang="en">English</a><a href="#top" lang="fr">Français</a></nav>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+(async () => {
+const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const hasGsap = typeof window.gsap !== "undefined" && typeof window.ScrollTrigger !== "undefined";
+if (hasGsap) gsap.registerPlugin(ScrollTrigger);
+if (!reduced && window.Lenis && hasGsap) {
+  const lenis = new Lenis({ lerp: 0.09 });
+  lenis.on("scroll", ScrollTrigger.update);
+  gsap.ticker.add((t) => lenis.raf(t * 1000));
+  gsap.ticker.lagSmoothing(0);
+  document.querySelectorAll('a[href^="#"]').forEach((a) => a.addEventListener("click", (e) => {
+    const el = document.querySelector(a.getAttribute("href"));
+    if (el) { e.preventDefault(); lenis.scrollTo(el); }
+  }));
+}
+
+const C = { wool: "#F2EEE6", indigo: "#1F2A5C", deep: "#161E44", madder: "#A32638", weld: "#E2A42B", firuze: "#138A84", rose: "#D9A3A0" };
+const PALETTE = [C.indigo, C.madder, C.weld, C.wool, C.firuze, C.deep, C.rose];
+const I = { indigo: 0, madder: 1, weld: 2, wool: 3, firuze: 4, deep: 5, rose: 6 };
+
+// Motifs on the weaving grid ("#" = knotted in the motif colour)
+const MOTIFS = {
+  goz: ["......#......", ".....#.#.....", "....#...#....", "...#..#..#...", "..#..#.#..#..", ".#..#.#.#..#.", "#..#.#.#.#..#", ".#..#.#.#..#.", "..#..#.#..#..", "...#..#..#...", "....#...#....", ".....#.#.....", "......#......"],
+  tree: ["......#......", ".....###.....", "....#.#.#....", "......#......", "...#.###.#...", "..#..#.#..#..", "......#......", ".#..#####..#.", "#..#..#..#..#", "......#......", ".....###.....", "....#####....", "...#######..."],
+  bird: ["..##.........", ".####........", "..###........", "...###.......", "...#####.....", "..#######..##", ".##########..", "..########...", "....######...", ".....#..#....", "....#..#.....", "...##.##....."],
+  star: ["......#......", ".....###.....", "#...#####...#", "##.##...##.##", ".####.#.####.", "..##.###.##..", ".#..#####..#.", "..##.###.##..", ".####.#.####.", "##.##...##.##", "#...#####...#", ".....###.....", "......#......"],
+  hands: ["..#.....#.....#..", ".###...###...###.", "..#.....#.....#..", "#################", "..#.....#.....#..", "..#.....#.....#..", ".#.#...#.#...#.#.", "#...#.#...#.#...#"],
+};
+const flip = (m) => [...m].reverse(); // rows are woven bottom-up
+
+function makeGrid(cols, rows, fill) { const g = new Uint8Array(cols * rows); g.fill(fill); return g; }
+function stamp(g, cols, rows, motif, x0, y0, color) {
+  const m = flip(motif);
+  for (let y = 0; y < m.length; y++) for (let x = 0; x < m[y].length; x++) {
+    if (m[y][x] !== "#") continue;
+    const gx = x0 + x, gy = y0 + y;
+    if (gx >= 0 && gx < cols && gy >= 0 && gy < rows) g[gy * cols + gx] = color;
+  }
+}
+function band(g, cols, rows, y0, h, color) { for (let y = y0; y < Math.min(rows, y0 + h); y++) for (let x = 0; x < cols; x++) g[y * cols + x] = color; }
+function zigzag(g, cols, rows, y0, h, ground, ink) {
+  band(g, cols, rows, y0, h, ground);
+  for (let y = 0; y < h; y++) for (let x = 0; x < cols; x++) {
+    const p = x % (h * 2);
+    if (Math.abs(p - h) <= y) g[(y0 + y) * cols + x] = ink;
+  }
+}
+function textRows(text, cols) {
+  const c = document.createElement("canvas"); c.width = cols; c.height = 12;
+  const ctx = c.getContext("2d", { willReadFrequently: true });
+  ctx.font = '8px "Silkscreen"'; ctx.textBaseline = "top"; ctx.fillStyle = "#000";
+  const w = Math.ceil(ctx.measureText(text).width);
+  if (w > cols - 4) return null;
+  ctx.fillText(text, Math.floor((cols - w) / 2), 2);
+  const d = ctx.getImageData(0, 0, cols, 12).data;
+  const rows = [];
+  for (let y = 0; y < 12; y++) { let r = ""; for (let x = 0; x < cols; x++) r += d[(y * cols + x) * 4 + 3] > 100 ? "#" : "."; rows.push(r); }
+  return rows;
+}
+
+// The hero kilim, from the bottom up.
+function heroDesign(cols, rows) {
+  const g = makeGrid(cols, rows, I.indigo);
+  let y = 0;
+  const repeat = () => {
+    band(g, cols, rows, y, 3, I.madder);
+    for (let x = 1; x < cols; x += 4) g[(y + 1) * cols + x] = I.weld;
+    y += 3;
+    band(g, cols, rows, y, 12, I.deep);
+    const word = textRows("TurkicBlue", cols);
+    if (word) stamp(g, cols, rows, word, 0, y, I.wool);
+    else stamp(g, cols, rows, MOTIFS.star, Math.floor(cols / 2) - 6, y - 1, I.wool);
+    y += 12;
+    band(g, cols, rows, y, 2, I.weld); y += 2;
+    zigzag(g, cols, rows, y, 6, I.indigo, I.weld); y += 6;
+    band(g, cols, rows, y, 17, I.madder);
+    const n = Math.max(1, Math.floor(cols / 19));
+    const gap = (cols - n * 13) / (n + 1);
+    for (let i = 0; i < n; i++) stamp(g, cols, rows, MOTIFS.goz, Math.round(gap + i * (13 + gap)), y + 2, I.weld);
+    for (let i = 0; i <= n; i++) { const cx = Math.round(gap / 2 + i * (13 + gap)) - 1; stamp(g, cols, rows, [".#.", "###", ".#."], cx, y + 7, I.wool); }
+    y += 17;
+    band(g, cols, rows, y, 2, I.weld); y += 2;
+    band(g, cols, rows, y, 12, I.firuze);
+    for (let x = 0; x < cols; x += 17) stamp(g, cols, rows, MOTIFS.hands, x, y + 2, I.wool);
+    y += 12;
+    zigzag(g, cols, rows, y, 6, I.madder, I.weld); y += 6;
+  };
+  while (y < rows) repeat();
+  return g;
+}
+
+// The projects strip: four bands, one motif each.
+const STRIP_BANDS = [
+  { ground: I.indigo, ink: I.weld, motif: "tree", edge: I.madder },
+  { ground: I.firuze, ink: I.wool, motif: "bird", edge: I.weld },
+  { ground: I.madder, ink: I.weld, motif: "star", edge: I.indigo },
+  { ground: I.deep, ink: I.rose, motif: "hands", edge: I.weld },
+];
+function stripDesign(cols, rows) {
+  const g = makeGrid(cols, rows, I.wool);
+  const h = Math.floor(rows / 4);
+  STRIP_BANDS.forEach((b, i) => {
+    const y0 = i * h;
+    band(g, cols, rows, y0, h, b.ground);
+    band(g, cols, rows, y0, 2, b.edge);
+    zigzag(g, cols, rows, y0 + 2, 4, b.ground, b.edge);
+    const m = MOTIFS[b.motif];
+    const mw = m[0].length, mh = m.length;
+    const copies = Math.max(1, Math.floor((h - 10) / (mh + 4)));
+    for (let k = 0; k < copies; k++) {
+      const cx = Math.floor((cols - mw) / 2);
+      const cy = y0 + 7 + k * (mh + 4) + Math.floor(((h - 10) - copies * (mh + 4)) / 2);
+      stamp(g, cols, rows, m, cx, cy, b.ink);
+      if (cols > mw + 10) {
+        stamp(g, cols, rows, [".#.", "###", ".#."], 2, cy + Math.floor(mh / 2) - 1, b.edge);
+        stamp(g, cols, rows, [".#.", "###", ".#."], cols - 5, cy + Math.floor(mh / 2) - 1, b.edge);
+      }
+    }
+  });
+  return g;
+}
+
+/* A loom: warp threads, a fabric that grows from the bottom, a shuttle on the working row. */
+class Loom {
+  constructor(canvas, { design, cell, background, interactive }) {
+    this.canvas = canvas; this.ctx = canvas.getContext("2d");
+    this.design = design; this.cellFor = cell; this.background = background; this.interactive = interactive;
+    this.fabric = document.createElement("canvas");
+    this.woven = 0; this.drawnRows = 0; this.target = 0;
+    this.pointer = { x: -9999, y: -9999, vx: 0 };
+    this.resize();
+    if (interactive) {
+      addEventListener("pointermove", (e) => {
+        const r = this.canvas.getBoundingClientRect();
+        const x = e.clientX - r.left, y = e.clientY - r.top;
+        this.pointer.vx = x - this.pointer.x; this.pointer.x = x; this.pointer.y = y;
+      });
+      this.canvas.addEventListener("pointerleave", () => { this.pointer.x = -9999; });
+    }
+  }
+  resize() {
+    const dpr = Math.min(devicePixelRatio || 1, 2);
+    const w = this.canvas.clientWidth, h = this.canvas.clientHeight;
+    this.w = w; this.h = h; this.dpr = dpr;
+    this.canvas.width = Math.round(w * dpr); this.canvas.height = Math.round(h * dpr);
+    this.cell = this.cellFor(w);
+    this.cols = Math.max(8, Math.floor(w / this.cell));
+    this.rows = Math.ceil(h / this.cell);
+    this.ox = (w - this.cols * this.cell) / 2;
+    this.grid = this.design(this.cols, this.rows);
+    this.fabric.width = this.canvas.width; this.fabric.height = this.canvas.height;
+    this.fctx = this.fabric.getContext("2d");
+    this.fctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    this.drawnRows = 0;
+    this.warp = Array.from({ length: this.cols }, () => ({ d: 0, v: 0 }));
+  }
+  cellRect(col, row) { return [this.ox + col * this.cell, this.h - (row + 1) * this.cell]; }
+  paintCell(ctx, col, row) {
+    const [x, y] = this.cellRect(col, row);
+    const s = this.cell;
+    ctx.fillStyle = PALETTE[this.grid[row * this.cols + col]];
+    ctx.fillRect(x, y, s, s);
+    // Over and under: alternate passes catch the light differently.
+    ctx.fillStyle = (col + row) % 2 ? "rgba(255,255,255,0.10)" : "rgba(0,0,0,0.10)";
+    ctx.fillRect(x, y, s, s * 0.5);
+    ctx.fillStyle = "rgba(0,0,0,0.16)";
+    ctx.fillRect(x, y + s - 1, s, 1);
+  }
+  paintRows(upTo) {
+    while (this.drawnRows < Math.min(upTo, this.rows)) {
+      for (let c = 0; c < this.cols; c++) this.paintCell(this.fctx, c, this.drawnRows);
+      this.drawnRows++;
+    }
+  }
+  frame(dt) {
+    const { ctx, dpr, w, h, cell } = this;
+    this.woven += (this.target - this.woven) * Math.min(dt * 5, 1);
+    const full = Math.floor(this.woven);
+    this.paintRows(full);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.fillStyle = this.background; ctx.fillRect(0, 0, w, h);
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.drawImage(this.fabric, 0, 0);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    // The working row: the shuttle has carried the weft part of the way across.
+    const frac = this.woven - full;
+    if (full < this.rows && frac > 0.01) {
+      const n = Math.floor(frac * this.cols);
+      const ltr = full % 2 === 0;
+      for (let i = 0; i < n; i++) this.paintCell(ctx, ltr ? i : this.cols - 1 - i, full);
+      const [sx, sy] = this.cellRect(ltr ? n : this.cols - 1 - n, full);
+      ctx.fillStyle = C.weld;
+      ctx.beginPath(); ctx.ellipse(sx + cell / 2, sy + cell / 2, cell * 1.4, cell * 0.36, 0, 0, Math.PI * 2); ctx.fill();
+    }
+
+    // Warp threads above the fabric, bent by the pointer and springing back.
+    const front = h - full * cell;
+    const pull = this.pointer;
+    ctx.lineWidth = Math.max(1, cell * 0.14);
+    for (let c = 0; c < this.cols; c++) {
+      const x = this.ox + (c + 0.5) * cell;
+      const wv = this.warp[c];
+      let force = 0;
+      if (this.interactive && pull.y < front && pull.y > 0) {
+        const dx = x - pull.x;
+        const fall = Math.exp(-(dx * dx) / (2 * 60 * 60));
+        force = Math.sign(dx || 1) * fall * 46 + pull.vx * fall * 0.6;
+      }
+      wv.v += ((force - wv.d) * 60 - wv.v * 7) * dt;
+      wv.d += wv.v * dt;
+      const midY = Math.min(Math.max(pull.y, 0), front);
+      ctx.strokeStyle = c % 2 ? "rgba(242,238,230,0.30)" : "rgba(242,238,230,0.18)";
+      ctx.beginPath();
+      ctx.moveTo(x, 0);
+      ctx.quadraticCurveTo(x + wv.d * 2, this.interactive && pull.x > -9000 ? midY : front / 2, x, front);
+      ctx.stroke();
+    }
+    pull.vx *= 0.85;
+  }
+}
+
+await Promise.race([document.fonts.load('8px "Silkscreen"', "TurkicBlue"), new Promise((r) => setTimeout(r, 2000))]);
+
+const hero = new Loom(document.getElementById("loom"), {
+  design: heroDesign,
+  cell: (w) => (w < 600 ? 9 : Math.max(11, Math.min(16, Math.round(w / 96)))),
+  background: C.indigo,
+  interactive: !reduced,
+});
+const strip = new Loom(document.getElementById("strip"), {
+  design: stripDesign,
+  cell: (w) => Math.max(8, Math.min(14, Math.round(w / 30))),
+  background: C.wool,
+  interactive: false,
+});
+addEventListener("resize", () => { hero.resize(); strip.resize(); });
+
+// The hero weaves about half its height by itself, then follows the scroll.
+const heroEl = document.querySelector(".hero");
+const copyEl = document.querySelector(".hero-copy");
+const weaveEl = document.querySelector(".weave");
+const panels = [...document.querySelectorAll(".wpanel")];
+const start = performance.now();
+let heroScroll = 0;
+function readScroll() {
+  const r = heroEl.getBoundingClientRect();
+  heroScroll = Math.min(Math.max(-r.top / r.height, 0), 1);
+  const s = weaveEl.getBoundingClientRect();
+  const p = Math.min(Math.max(-s.top / (s.height - innerHeight), 0), 1);
+  strip.target = reduced ? strip.rows : p * strip.rows;
+  const band = Math.min(3, Math.floor((strip.target / strip.rows) * 4 - 0.05));
+  if (!reduced) panels.forEach((el, i) => { el.classList.toggle("on", i === Math.max(0, band)); el.setAttribute("aria-hidden", i === Math.max(0, band) ? "false" : "true"); });
+}
+addEventListener("scroll", readScroll, { passive: true });
+readScroll();
+
+let last = performance.now();
+function tick(now) {
+  requestAnimationFrame(tick);
+  const dt = Math.min((now - last) / 1000, 0.05); last = now;
+  const intro = reduced ? 1 : Math.min((now - start) / 3800, 1);
+  const eased = 1 - Math.pow(1 - intro, 3);
+  const copyBottom = copyEl.getBoundingClientRect().bottom - heroEl.getBoundingClientRect().top;
+  const room = Math.max(4, Math.floor((hero.h - copyBottom - 40) / hero.cell));
+  hero.target = room * Math.min(1, 0.4 * eased + heroScroll * 1.9);
+  if (hero.canvas.getBoundingClientRect().bottom > 0) hero.frame(dt);
+  const sr = strip.canvas.getBoundingClientRect();
+  if (sr.top < innerHeight && sr.bottom > 0) strip.frame(dt);
+}
+requestAnimationFrame(tick);
+
+/* ---------- Weave your own motif ---------- */
+const quarterEl = document.getElementById("quarter");
+const rug = document.getElementById("rug");
+const rctx = rug.getContext("2d");
+let quarter = Array.from({ length: 7 }, () => Array(7).fill(false));
+const quarterOf = (m) => Array.from({ length: 7 }, (_, r) => Array.from({ length: 7 }, (_, c) => m[r][c] === "#"));
+try { const saved = JSON.parse(localStorage.getItem("tb-motif") || "null"); if (Array.isArray(saved) && saved.length === 7) quarter = saved; else quarter = quarterOf(MOTIFS.goz); } catch { quarter = quarterOf(MOTIFS.goz); }
+const buttons = [];
+for (let r = 0; r < 7; r++) for (let c = 0; c < 7; c++) {
+  const b = document.createElement("button");
+  b.type = "button";
+  b.setAttribute("aria-label", `Row ${r + 1}, column ${c + 1}`);
+  b.addEventListener("click", () => { quarter[r][c] = !quarter[r][c]; sync(); });
+  quarterEl.append(b);
+  buttons.push({ b, r, c });
+}
+function full() {
+  return Array.from({ length: 13 }, (_, r) => Array.from({ length: 13 }, (_, c) => quarter[r <= 6 ? r : 12 - r][c <= 6 ? c : 12 - c]));
+}
+function drawRug() {
+  const W = rug.width, H = rug.height, s = 8;
+  rctx.fillStyle = C.madder; rctx.fillRect(0, 0, W, H);
+  // Border: a zigzag edge, then the field.
+  for (let y = 0; y < H; y += s) for (let x = 0; x < W; x += s) {
+    const edge = x < 4 * s || x >= W - 4 * s || y < 4 * s || y >= H - 4 * s;
+    if (!edge) continue;
+    const k = (Math.floor(x / s) + Math.floor(y / s)) % 4;
+    rctx.fillStyle = k < 2 ? C.indigo : C.weld;
+    rctx.fillRect(x, y, s, s);
+  }
+  const m = full();
+  const field = { x: 5 * s, y: 5 * s, w: W - 10 * s, h: H - 10 * s };
+  const tile = 13 * s + 2 * s;
+  const nx = Math.floor(field.w / tile), ny = Math.floor(field.h / tile);
+  const ox = field.x + (field.w - nx * tile) / 2 + s, oy = field.y + (field.h - ny * tile) / 2 + s;
+  for (let ty = 0; ty < ny; ty++) for (let tx = 0; tx < nx; tx++) for (let r = 0; r < 13; r++) for (let c = 0; c < 13; c++) {
+    if (!m[r][c]) continue;
+    rctx.fillStyle = (tx + ty) % 2 ? C.wool : C.weld;
+    rctx.fillRect(ox + tx * tile + c * s, oy + ty * tile + r * s, s, s);
+  }
+  // Fringe
+  rctx.fillStyle = C.wool;
+  for (let x = 4; x < W; x += 6) { rctx.fillRect(x, 0, 2, 6); rctx.fillRect(x, H - 6, 2, 6); }
+}
+function sync() {
+  buttons.forEach(({ b, r, c }) => b.setAttribute("aria-pressed", quarter[r][c] ? "true" : "false"));
+  drawRug();
+  try { localStorage.setItem("tb-motif", JSON.stringify(quarter)); } catch {}
+}
+document.querySelectorAll("[data-preset]").forEach((b) => b.addEventListener("click", () => {
+  const p = b.dataset.preset;
+  quarter = p === "clear" ? Array.from({ length: 7 }, () => Array(7).fill(false)) : quarterOf(MOTIFS[p]);
+  sync();
+}));
+sync();
+
+/* ---------- The hand-in-hand band above the DAO ---------- */
+(() => {
+  const band = document.getElementById("hands-band");
+  const c = document.createElement("canvas"); const s = 4;
+  const m = MOTIFS.hands; c.width = (m[0].length + 1) * s; c.height = 14 * s;
+  const ctx = c.getContext("2d");
+  ctx.fillStyle = C.indigo; ctx.fillRect(0, 0, c.width, c.height);
+  ctx.fillStyle = C.weld;
+  m.forEach((row, y) => [...row].forEach((ch, x) => { if (ch === "#") ctx.fillRect(x * s, (y + 3) * s, s, s); }));
+  band.style.backgroundImage = `url(${c.toDataURL()})`;
+  band.style.backgroundSize = `${c.width}px ${c.height}px`;
+  band.style.height = `${c.height}px`;
+})();
+
+/* ---------- Swatches turn over on tap too ---------- */
+document.querySelectorAll(".swatch").forEach((s) => s.addEventListener("click", (e) => { if (!e.target.closest("a")) s.classList.toggle("turned"); }));
+
+/* ---------- Reveals ---------- */
+if (hasGsap && !reduced) {
+  gsap.utils.toArray(".weave-intro h2, .weave-intro p, .maker h2, .maker p, .mission h2, .threads li, .dao h2, .dao p, .dao li, .join h2, .swatch").forEach((el) => {
+    gsap.from(el, { y: 40, opacity: 0, duration: 0.9, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 88%" } });
+  });
+  gsap.utils.toArray(".threads b").forEach((b) => {
+    gsap.fromTo(b, { "--wdth": 0 }, { "--wdth": 1, scrollTrigger: { trigger: b, start: "top 90%", end: "top 50%", scrub: true }, onUpdate() { b.style.fontVariationSettings = `"wdth" ${75 + 25 * gsap.getProperty(b, "--wdth")}`; } });
+  });
+}
+
+document.getElementById("notify").addEventListener("submit", (e) => {
+  e.preventDefault();
+  document.getElementById("notify-note").textContent = "This is a prototype: sign-ups aren't connected yet, so nothing was sent.";
+});
+})();
+</script>
