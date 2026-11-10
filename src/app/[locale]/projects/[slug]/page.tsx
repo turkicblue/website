@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import { hasLocale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
+import { JsonLd } from "@/components/json-ld";
 import { PageHero } from "@/components/page-hero";
 import { ProjectIcon } from "@/components/project-icon";
 import { StatusBadge } from "@/components/sections";
@@ -8,37 +10,61 @@ import { btnDark, sectionTitle, wrap } from "@/components/ui";
 import { PROJECTS, projectBySlug } from "@/content/projects";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
-import { alternates } from "@/lib/site";
+import { pageMetadata } from "@/lib/site";
+import { ORGANIZATION_ID, pageGraph } from "@/lib/structured-data";
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) => PROJECTS.map((p) => ({ locale, slug: p.slug })));
 }
 
+export const dynamicParams = false;
+
 export async function generateMetadata({ params }: PageProps<"/[locale]/projects/[slug]">): Promise<Metadata> {
   const { locale, slug } = await params;
   const project = projectBySlug(slug);
-  if (!project) return {};
-  const t = await getTranslations(`Projects.items.${project.slug}`);
-  return { title: t("name"), description: t("summary"), alternates: alternates(locale, `/projects/${slug}`) };
+  if (!project || !hasLocale(routing.locales, locale)) return {};
+  const t = await getTranslations({ locale, namespace: `Projects.items.${project.slug}` });
+  return pageMetadata(locale, `/projects/${project.slug}`, { title: t("name"), description: t("summary") });
 }
 
 export default async function ProjectPage({ params }: PageProps<"/[locale]/projects/[slug]">) {
-  const { slug } = await params;
+  const { locale, slug } = await params;
   const project = projectBySlug(slug);
-  if (!project) notFound();
+  if (!project || !hasLocale(routing.locales, locale)) notFound();
   const t = await getTranslations("Projects");
+  const nav = await getTranslations("Nav");
   const base = `items.${project.slug}`;
+  const name = t(`${base}.name`);
+  const summary = t(`${base}.summary`);
   const body = t.raw(`${base}.body`) as string[];
   const points = t.raw(`${base}.points`) as string[];
-  const facts = t.raw(`${base}.facts`) as { label: string; value: string }[];
+  // The status row comes from the project list, so it can't disagree with the badge.
+  const facts = [{ label: t("statusLabel"), value: t(`status.${project.status}`) }, ...(t.raw(`${base}.facts`) as { label: string; value: string }[])];
   const others = PROJECTS.filter((p) => p.slug !== project.slug);
   const { href, external } = project.action;
+  const path = `/projects/${project.slug}`;
 
   return (
     <>
+      <JsonLd
+        data={pageGraph({
+          locale,
+          path,
+          name,
+          description: summary,
+          crumbs: [
+            { name: nav("home"), path: "" },
+            { name: nav("projects"), path: "/projects" },
+            { name, path },
+          ],
+          about: project.website
+            ? { "@type": "WebSite", name, url: project.website, description: summary, publisher: { "@id": ORGANIZATION_ID } }
+            : undefined,
+        })}
+      />
       <PageHero
-        title={t(`${base}.name`)}
-        lede={t(`${base}.summary`)}
+        title={name}
+        lede={summary}
         label={
           <span className="flex items-center gap-3">
             <ProjectIcon slug={project.slug} className="size-8 text-turquoise" />

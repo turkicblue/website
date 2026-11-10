@@ -2,8 +2,9 @@ import { getTranslations } from "next-intl/server";
 import { PROJECTS, type Project } from "@/content/projects";
 import { LEXICON } from "@/content/lexicon";
 import { Link } from "@/i18n/navigation";
-import { NewsletterForm } from "./newsletter-form";
+import { CONTACT_EMAIL, mailto } from "@/lib/site";
 import { ProjectIcon } from "./project-icon";
+import { btnLight } from "./ui";
 
 type Item = { title: string; text: string };
 
@@ -185,6 +186,10 @@ export async function WaysGrid() {
   );
 }
 
+/**
+ * Updates by email. There is no mailing service: subscribing is an email to the foundation, so
+ * the button opens the reader's mail app and the address is shown for those without one.
+ */
 export async function Newsletter() {
   const t = await getTranslations("Newsletter");
   return (
@@ -193,7 +198,38 @@ export async function Newsletter() {
         <h3 className="font-display text-[28px] font-normal">{t("title")}</h3>
         <p className="mt-2 text-mist">{t("text")}</p>
       </div>
-      <NewsletterForm label={t("label")} button={t("button")} notConnected={t("notConnected")} />
+      <div className="flex flex-col items-start gap-3">
+        <a className={btnLight} href={mailto(t("subject"))}>{t("button")}</a>
+        <p className="text-sm text-mist">
+          {t("or")} <a href={mailto(t("subject"))} className="text-turquoise">{CONTACT_EMAIL}</a>
+        </p>
+      </div>
+    </div>
+  );
+}
+
+/** The contact address as a link. */
+export function EmailLink({ className = "" }: { className?: string }) {
+  return (
+    <a href={mailto()} className={className}>
+      {CONTACT_EMAIL}
+    </a>
+  );
+}
+
+/** Questions and answers, each opening in place. Answers that are still placeholders are highlighted. */
+export function FaqList({ items }: { items: { q: string; a: string }[] }) {
+  return (
+    <div>
+      {items.map((item) => (
+        <details key={item.q} className="group border-t border-line py-5 last:border-b" data-reveal>
+          <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-lg font-medium marker:hidden">
+            <h3 className="!font-sans text-lg font-medium">{item.q}</h3>
+            <span aria-hidden="true" className="text-2xl font-light text-turquoise-ink transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <p className={`mt-3 max-w-[64ch] ${item.a.startsWith("[") ? "text-turquoise-ink" : "text-gray"}`}>{item.a}</p>
+        </details>
+      ))}
     </div>
   );
 }

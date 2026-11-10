@@ -1,6 +1,6 @@
 // The foundation's projects. Their text is in messages/*.json under Projects.items.<slug>.
 
-export type ProjectStatus = "live" | "preparation" | "forming" | "planned";
+export type ProjectStatus = "live" | "development" | "forming";
 
 export type Project = {
   slug: "turkipedia" | "turquoise-news" | "research-network" | "dao";
@@ -13,9 +13,9 @@ export type Project = {
 
 export const PROJECTS: Project[] = [
   { slug: "turkipedia", status: "live", website: "https://turkipedia.org", action: { href: "https://turkipedia.org", external: true } },
-  { slug: "turquoise-news", status: "preparation", action: { href: "/get-involved#contact" } },
+  { slug: "turquoise-news", status: "development", action: { href: "/get-involved#contact" } },
   { slug: "research-network", status: "forming", action: { href: "/get-involved#contact" } },
-  { slug: "dao", status: "planned", action: { href: "/governance" } },
+  { slug: "dao", status: "development", action: { href: "/governance" } },
 ];
 
 export const projectBySlug = (slug: string) => PROJECTS.find((p) => p.slug === slug);

@@ -3,6 +3,7 @@ import { PROJECTS } from "@/content/projects";
 import { Link } from "@/i18n/navigation";
 import { LanguageSwitcher } from "./language-switcher";
 import { LogoMark } from "./logo";
+import { EmailLink } from "./sections";
 import { wrap } from "./ui";
 
 export async function SiteFooter() {
@@ -47,8 +48,7 @@ export async function SiteFooter() {
           <div>
             <h2 className={heading}>{t("contact")}</h2>
             <ul className="grid gap-2">
-              <li>{t("email")}</li>
-              <li>{t("address")}</li>
+              <li><EmailLink className={`${link} break-all`} /></li>
               <li><Link className={link} href="/legal">{t("legal")}</Link></li>
             </ul>
           </div>

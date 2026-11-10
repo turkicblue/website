@@ -3,16 +3,20 @@ import { hasLocale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { SeatCircle } from "@/components/seat-circle";
+import { JsonLd } from "@/components/json-ld";
 import { FactsList, GovernanceSteps, NameTable, Newsletter, ProjectList, WaysGrid, WorkList } from "@/components/sections";
 import { Sky, type SkyStage } from "@/components/sky";
 import { btnLight, btnOutlineLight, sectionLede, sectionTitle, wrap } from "@/components/ui";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
-import { alternates } from "@/lib/site";
+import { pageMetadata } from "@/lib/site";
+import { pageGraph } from "@/lib/structured-data";
 
 export async function generateMetadata({ params }: PageProps<"/[locale]">): Promise<Metadata> {
   const { locale } = await params;
-  return { alternates: alternates(locale) };
+  if (!hasLocale(routing.locales, locale)) return {};
+  const t = await getTranslations({ locale, namespace: "Meta" });
+  return { title: { absolute: t("homeTitle") }, ...(await pageMetadata(locale, "", { description: t("description") })) };
 }
 
 const more = "mt-6 inline-block font-medium text-turquoise-ink";
@@ -24,9 +28,11 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
   const t = await getTranslations("Home");
   const name = await getTranslations("Name");
   const gov = await getTranslations("Governance");
+  const meta = await getTranslations("Meta");
 
   return (
     <>
+      <JsonLd data={pageGraph({ locale, path: "", name: meta("homeTitle"), description: meta("description") })} />
       <Sky
         label={sky("label")}
         stages={sky.raw("stages") as SkyStage[]}
