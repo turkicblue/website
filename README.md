@@ -27,13 +27,21 @@ that address and its subpath from the Pages settings, so no file needs editing.
 Recommended: search engines only read `robots.txt` at the root of a domain, and the address is the
 foundation's own.
 
-1. **Settings > Pages > Custom domain**: enter `turkicblue.org`, save, then tick **Enforce HTTPS**
-   once the certificate is ready.
-2. At the domain registrar, point the domain at GitHub Pages:
+1. **Settings > Pages > Custom domain**: `turkicblue.org`. GitHub sends `www` on to it.
+2. DNS for the domain is on Cloudflare (free plan), in front of GitHub Pages:
    - `A` records for `turkicblue.org`: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`,
-     `185.199.111.153`
-   - `CNAME` record for `www`: `<owner>.github.io`
+     `185.199.111.153`, proxied
+   - `CNAME` record for `www`: `<owner>.github.io`, proxied
+   - SSL/TLS encryption mode **Full**, and **Always Use HTTPS** on. Cloudflare provides the
+     certificate and the redirect to HTTPS.
+   - Email Routing forwards the contact address. The `MX` and `SPF` records are Cloudflare's.
 3. Run the workflow again so canonical links, the sitemap and share images use the new address.
+
+Why Cloudflare: in November 2026 GitHub's own certificate for `turkicblue.org` stayed at "The
+certificate request process will begin shortly" for over a day, with DNS correct, so GitHub's
+**Enforce HTTPS** could not be switched on. If GitHub's certificate is ever issued (check with
+`gh api repos/<owner>/<repo>/pages --jq .https_certificate`), Cloudflare's mode can be raised to
+**Full (strict)**. Don't use **Flexible**: it loops once GitHub enforces HTTPS.
 
 ### After the first deploy
 
